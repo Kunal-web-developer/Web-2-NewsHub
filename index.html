@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News Hub</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="top-nav">
+        <!-- Logo -->
+        <div id="logo">
+          <img src="assets/logo.png" alt="News Hub Logo" />
+        </div>
+
+        <!-- Country selection & Weather report -->
+        <div class="user-options">
+          <label for="country-select">Country:</label>
+          <select id="country-select">
+            <option value="IN">India</option>
+            <option value="US">USA</option>
+            <option value="UK">UK</option>
+            <option value="CA">Canada</option>
+          </select>
+          <div id="weather-report">Weather: 25°C</div>
+        </div>
+
+        <!-- Center navigation -->
+        <div class="center-nav">
+          <ul>
+            <li><a href="#">All News</a></li>
+            <li><a href="#">Top Headlines</a></li>
+            <li><a href="#">Read ePaper</a></li>
+          </ul>
+        </div>
+
+        <!-- Subscribe button -->
+        <div class="right-nav">
+          <button class="subscribe-btn">Subscribe</button>
+        </div>
+
+        <!-- Social media icons -->
+        <div class="social-icons">
+          <a href="https://www.facebook.com/TimesofIndia?mibextid=ZbWKwL"
+            ><img src="assets/facebook.png" alt="Facebook"
+          /></a>
+          <a
+            href="https://www.instagram.com/timesofindia?igsh=MXEzYms4enljZ3I1aA=="
+            ><img src="assets/instagram-logo.svg" alt="Instagram"
+          /></a>
+          <a href="https://www.linkedin.com/company/timesofindia/"
+            ><img src="assets/linkedin-logo.svg" alt="LinkedIn"
+          /></a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="headline-section">
+      <div class="breaking-news">
+        <span>Breaking News:</span>
+        <marquee behavior="scroll" direction="left"
+          >Global markets are on edge as international tensions rise. Stay tuned
+          for the latest updates!</marquee
+        >
+      </div>
+
+      <div class="featured-headline">
+        <h1>
+          Major Storm Expected to Hit the East Coast, Evacuations Underway
+        </h1>
+        <p>
+          Millions brace for the storm of the decade as authorities issue
+          evacuation orders along the eastern seaboard. Follow live updates
+          here.
+        </p>
+        <button class="live-news-btn">Watch Live Coverage</button>
+      </div>
+    </section>
+
+    <nav class="secondary-nav">
+      <ul>
+        <li>
+          <a href="#"><span class="icon">&#x1F1EE;&#x1F1F3;</span> India</a>
+        </li>
+        <li>
+          <a href="#"><span class="icon">&#x1F30E;</span> World</a>
+        </li>
+        <li>
+          <a href="#"><span class="icon">&#x1F4BB;</span> Technology</a>
+        </li>
+        <li>
+          <a href="#"><span class="icon">&#x1F3AC;</span> Entertainment</a>
+        </li>
+        <li>
+          <a href="#"><span class="icon">&#x1F3C8;</span> Sports</a>
+        </li>
+        <li>
+          <a href="#"><span class="icon">&#x1F3E0;</span> Local</a>
+        </li>
+        <li>
+          <a href="#"><span class="icon">&#x1F4B0;</span> Business</a>
+        </li>
+        <li>
+          <a href="#"><span class="icon">&#x1F52C;</span> Science</a>
+        </li>
+        <li>
+          <a href="#"><span class="icon">&#x1F3E5;</span> Health</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="news-section">
+      <div class="cards-container">
+        <div class="card">
+          <div class="card-header">
+            <img src="https://via.placeholder.com/400x200" alt="News Image" />
+          </div>
+          <div class="card-content">
+            <h3 class="news-title">Breaking News: Tech Advances</h3>
+            <h6 class="news-source">End Gadget 26/08/2023</h6>
+            <p class="news-desc">
+              Major advancements in AI technology are pushing boundaries,
+              offering new opportunities in multiple sectors. Stay updated with
+              live coverage.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <img src="https://via.placeholder.com/400x200" alt="News Image" />
+          </div>
+          <div class="card-content">
+            <h3 class="news-title">Global Markets on Edge</h3>
+            <h6 class="news-source">Reuters 26/08/2023</h6>
+            <p class="news-desc">
+              Tensions in global markets rise as political factors impact
+              economies. Financial experts advise caution as stocks face
+              volatility.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <img src="https://via.placeholder.com/400x200" alt="News Image" />
+          </div>
+          <div class="card-content">
+            <h3 class="news-title">Health Innovations: What's Next?</h3>
+            <h6 class="news-source">HealthLine 26/08/2023</h6>
+            <p class="news-desc">
+              The latest breakthroughs in healthcare promise life-changing
+              treatments. Discover how the future of medicine is shaping up.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="assets/footer logo.jpg" alt="Footer Logo" />
+        </div>
+
+        <div class="footer-links">
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-social">
+          <a href="https://www.facebook.com/TimesofIndia?mibextid=ZbWKwL"
+            ><img src="assets/facebook.png" alt="Facebook"
+          /></a>
+          <a
+            href="https://www.instagram.com/timesofindia?igsh=MXEzYms4enljZ3I1aA=="
+            ><img src="assets/instagram-logo.svg" alt="Instagram"
+          /></a>
+          <a href="https://www.linkedin.com/company/timesofindia/"
+            ><img src="assets/linkedin-logo.svg" alt="LinkedIn"
+          /></a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 News Hub. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
