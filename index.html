@@ -1,103 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>News Hub</title>
     <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+</head>
+<body>
     <nav>
-      <div class="main-nav container flex">
-        <a href="#" onclick="reload()" class="company-logo">
-          <img src="logo.png" alt="website logo" />
-        </a>
-        <div class="nav-links">
-          <ul class="flex">
-            <li
-              class="hover-link nav-item"
-              id="ipl"
-              onclick="onNavItemClick('ipl')"
-            >
-              IPL
-            </li>
-            <li
-              class="hover-link nav-item"
-              id="finance"
-              onclick="onNavItemClick('finance')"
-            >
-              Finance
-            </li>
-            <li
-              class="hover-link nav-item"
-              id="politics"
-              onclick="onNavItemClick('politics')"
-            >
-              Politics
-            </li>
-          </ul>
+        <div class="main-nav container flex">
+            <div class="header">
+                <a href="#" onclick="reload()" class="company-logo">
+                    <img src="logo.png" alt="website logo" class="logo" />
+                </a>
+                <div class="nav-links">
+                    <ul class="flex">
+                        <li class="hover-link nav-item" id="ipl" onclick="onNavItemClick('ipl')">IPL</li>
+                        <li class="hover-link nav-item" id="finance" onclick="onNavItemClick('finance')">Finance</li>
+                        <li class="hover-link nav-item" id="politics" onclick="onNavItemClick('politics')">Politics</li>
+                    </ul>
+                </div>
+                <div class="search-bar flex">
+                    <input id="search-text" type="text" class="news-input" placeholder="e.g. Science" />
+                    <button id="search-button" class="search-button">Search</button>
+                </div>
+            </div>
         </div>
-        <div class="search-bar flex">
-          <input
-            id="search-text"
-            type="text"
-            class="news-input"
-            placeholder="e.g. Science"
-          />
-          <button id="search-button" class="search-button">Search</button>
-        </div>
-      </div>
     </nav>
 
     <main>
-      <div class="cards-container container flex" id="cards-container"></div>
+        <h1 class="news-heading">Latest News</h1>
+        <div class="cards-container container flex" id="cards-container"></div>
     </main>
 
     <template id="template-news-card">
-      <div class="card">
-        <div class="card-header">
-          <img
-            src="https://via.placeholder.com/400x200"
-            alt="news-image"
-            id="news-img"
-          />
+        <div class="card">
+            <div class="card-image">
+                <img src="https://via.placeholder.com/150" alt="news-image" id="news-img" />
+            </div>
+            <div class="card-description">
+                <h3 id="news-title">This is the Title</h3>
+                <h6 class="news-source" id="news-source">End Gadget 26/08/2023</h6>
+                <p class="news-desc" id="news-desc">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae saepe quis voluptatum.
+                </p>
+            </div>
         </div>
-        <div class="card-content">
-          <h3 id="news-title">This is the Title</h3>
-          <h6 class="news-source" id="news-source">End Gadget 26/08/2023</h6>
-          <p class="news-desc" id="news-desc">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae
-            saepe quis voluptatum quisquam vitae doloremque facilis molestias
-            quae ratione cumque!
-          </p>
-        </div>
-      </div>
     </template>
 
     <footer>
-      <div class="footer-container">
-        <div class="footer-content">
-          <div class="footer-info">
-            <p>&copy; 2024 News Hub</p>
-            <p>
-              <label for="email-input">Enter your email:</label>
-              <input
-                type="email"
-                id="email-input"
-                placeholder="your-email@example.com"
-              />
-              <button id="subscribe-button">Subscribe</button>
-            </p>
-          </div>
-          <div class="footer-subscribe">
-            <h4>Subscribe to Our Newsletter</h4>
-          </div>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p>&copy; 2024 News Hub</p>
+                    <p>
+                        <label for="email-input">Enter your email:</label>
+                        <input type="email" id="email-input" placeholder="your-email@example.com" />
+                        <button id="subscribe-button">Subscribe</button>
+                    </p>
+                </div>
+                <div class="footer-subscribe">
+                    <h4>Subscribe to Our Newsletter</h4>
+                </div>
+            </div>
         </div>
-      </div>
     </footer>
 
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
- 
