@@ -77,13 +77,15 @@ ul {
     font-size: 25px; /* Slightly smaller */
     font-weight: 700;
     background: linear-gradient(90deg, #005cbf, #00baff); /* New gradient for fresher look */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text; /* For Webkit-based browsers (Chrome, Safari) */
+    background-clip: text; /* Standard property for compatibility */
+    -webkit-text-fill-color: transparent; /* Ensures text is transparent for Webkit browsers */
     letter-spacing: 2px; /* Reduced spacing */
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1); /* Softer shadow */
     margin-right: 8px; /* Slightly reduced margin */
     transition: color 0.2s ease;
 }
+
 
 .of {
     font-size: 10px;
