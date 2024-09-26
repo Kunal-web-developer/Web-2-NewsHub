@@ -218,9 +218,9 @@ function toggleMode() {
 
   // Check if dark mode is enabled
   if (body.classList.contains('dark-mode')) {
-    modeIcon.src = 'assist/dark mode.png'; // Set dark mode icon
+    modeIcon.src = 'assets/dark mode.png'; // Set dark mode icon
   } else {
-    modeIcon.src = 'assist/light mode.png'; // Set light mode icon
+    modeIcon.src = 'assets/light mode.png'; // Set light mode icon
   }
 }
 
