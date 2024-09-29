@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f6f5f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 400px;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    text-align: center;
+    transition: all 0.3s ease; /* Added smooth transition for resizing */
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px; /* Increased font size slightly for better readability */
+}
+
+button {
+    background-color: #ff4b2b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px; /* Ensured button font size scales well */
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff1f0b;
+}
+
+a {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #ff4b2b;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Use 90% width on medium-sized screens */
+        padding: 30px;
+    }
+
+    input {
+        padding: 12px; /* Adjust padding for smaller screens */
+    }
+
+    button {
+        padding: 12px;
+        font-size: 15px; /* Adjust button size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%; /* Full width on small screens like phones */
+        padding: 20px;
+    }
+
+    input {
+        padding: 10px;
+        font-size: 14px; /* Smaller font size on very small screens */
+    }
+
+    button {
+        padding: 10px;
+        font-size: 14px; /* Adjust button font size */
+    }
+}
+
+    </style>
+        
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="email" id="loginEmail" placeholder="Email" required>
+            <input type="password" id="loginPassword" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <a href="signup.html">Don't have an account? Sign Up</a>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            const user = users.find(u => u.email === email && u.password === password);
+
+            if (user) {
+                alert('Logged in successfully!');
+                localStorage.setItem('currentUser', JSON.stringify(user));
+                const userPreferences = JSON.parse(localStorage.getItem('userPreferences'));
+                
+                if (userPreferences) {
+                    window.location.href = 'homepage.html'; // Redirect to homepage if preferences exist
+                } else {
+                    window.location.href = 'preferences.html'; // Redirect to preferences if not set
+                }
+            } else {
+                alert('Invalid email or password. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>

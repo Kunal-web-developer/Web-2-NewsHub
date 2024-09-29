@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <style>
+        /* Internal CSS for Signup Page */
+        body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f6f5f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 400px;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    text-align: center;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #ff4b2b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #ff1f0b;
+}
+
+a {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #ff4b2b;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Use 90% width on tablets and smaller devices */
+        padding: 30px;
+    }
+
+    input {
+        padding: 12px; /* Adjust input padding for smaller screens */
+    }
+
+    button {
+        padding: 12px;
+        font-size: 15px; /* Adjust button font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%; /* Nearly full width on mobile devices */
+        padding: 20px;
+    }
+
+    input {
+        padding: 10px;
+        font-size: 14px; /* Smaller font size for smaller screens */
+    }
+
+    button {
+        padding: 10px;
+        font-size: 14px; /* Adjust button font size for mobile */
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Signup</h2>
+        <form id="signupForm">
+            <input type="text" id="signupName" placeholder="Name" required>
+            <input type="email" id="signupEmail" placeholder="Email" required>
+            <input type="password" id="signupPassword" placeholder="Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <a href="login.html">Already have an account? Login</a>
+    </div>
+
+    <script>
+        // Internal JavaScript for Signup Page
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();  // Prevent page refresh
+            const name = document.getElementById('signupName').value;
+            const email = document.getElementById('signupEmail').value;
+            const password = document.getElementById('signupPassword').value;
+
+            // Save user to local storage
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            users.push({ name, email, password });
+            localStorage.setItem('users', JSON.stringify(users));
+
+            alert('Signed up successfully! Please log in.');
+            window.location.href = 'login.html'; // Redirect to login page
+        });
+    </script>
+</body>
+</html>

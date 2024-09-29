@@ -1,0 +1,635 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f6f5f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 20px;
+}
+h1 {
+  margin-bottom: 20px;
+}
+#logout {
+  margin: 20px;
+  background-color: #ff4b2b;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+#logout:hover {
+  background-color: #ff1f0b;
+}
+#userPreferences {
+  margin-top: 20px;
+  text-align: center;
+}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@500&display=swap");
+
+/* Global Styles */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-text-color: #183b56;
+  --secondary-text-color: #577592;
+  --accent-color: #2294ed;
+  --accent-color-dark: #1d69a3;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--primary-text-color);
+}
+
+/* Navbar Styles */
+/* Navbar Styles */
+nav {
+  background-color: #ffffff; /* Clean white background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  left: 0;
+  right: 0;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px; /* Adjusted padding */
+}
+.company-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.3s ease; /* Slight scale effect on hover */
+}
+
+.logo-text {
+  font-size: 48px; /* Larger font size for prominence */
+  font-family: "Montserrat", sans-serif; /* Clean, modern font */
+  letter-spacing: 0px; /* Slight spacing for elegance */
+}
+
+/* Colorful styling for "Echoes" */
+.logo-text .echo {
+  color: #4285f4; /* Blue for E */
+}
+
+.logo-text .echo:nth-child(2) {
+  color: #ea4335; /* Red for c */
+}
+
+.logo-text .echo:nth-child(3) {
+  color: #fbbc05; /* Yellow for h */
+}
+
+.logo-text .echo:nth-child(4) {
+  color: #4285f4; /* Blue for o */
+}
+
+.logo-text .echo:nth-child(5) {
+  color: #34a853; /* Green for e */
+}
+
+.logo-text .echo:nth-child(6) {
+  color: #ea4335; /* Red for s */
+}
+
+/* Styling for "Of News" */
+.logo-subtext {
+  font-size: 24px; /* Smaller size */
+  color: #000; /* Black color */
+  font-family: "Montserrat", sans-serif; /* Consistent font */
+  margin-left: 10px; /* Spacing between words */
+}
+
+/* Hover effect */
+.company-logo:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.search-bar {
+  flex-grow: 1; /* Take available space */
+  margin: 0 20px; /* Margin for spacing */
+}
+
+.news-input {
+  width: 100%;
+  height: 40px; /* Height for usability */
+  padding: 0 12px;
+  border-radius: 4px;
+  border: 2px solid #bbd0e2;
+  font-family: "Roboto", sans-serif;
+}
+.auth-menu {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+}
+
+.auth-button {
+  background-color: #2294ed; /* Accent color */
+  color: white;
+  padding: 10px 20px; /* Increased padding for better usability */
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px; /* Slightly larger font size */
+  transition: background 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+.auth-button:hover {
+  background-color: #1d69a3; /* Darker shade on hover */
+  transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.auth-button:active {
+  transform: translateY(0); /* Reset lift on click */
+}
+#weather-widget {
+  background-color: #34495e;
+  padding: 10px 20px;
+  border-radius: 25px;
+  color: #ecf0f1;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  margin-left: 20px; /* Add space between elements */
+}
+
+#weather-widget img {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.secondary-nav {
+  padding: 10px 0; /* Space around the links */
+  
+}
+
+.secondary-nav ul {
+  display: flex;
+  justify-content: center; /* Center the links */
+  gap: 30px; /* Space between links */
+}
+
+.secondary-nav li {
+  cursor: pointer; /* Change cursor to pointer */
+  padding: 10px 15px; /* Add padding for better click area */
+  border-radius: 5px; /* Slight rounding for buttons */
+  transition: background 0.3s, color 0.3s; /* Smooth transitions */
+}
+
+.secondary-nav li:hover {
+  background-color: #f0f0f0; /* Light gray background on hover */
+  color: var(--accent-color); /* Change text color on hover */
+}
+/* Layout improvements */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Search bar */
+.search-bar {
+  flex-grow: 1;
+}
+
+.news-input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* Weather widget */
+#weather-widget {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#country-select {
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+#weather-info {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+#weather-icon {
+  width: 30px;
+  height: 30px;
+  display: none;
+}
+
+/* Other styles */
+.logo-text {
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+header nav ul li {
+  padding: 10px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+header nav ul li:hover {
+  background-color: #ddd;
+  border-radius: 4px;
+}
+
+/* Breaking News Bar */
+.breaking-news {
+  background-color: #ffcc00; /* Bright background for visibility */
+  padding: 15px 20px; /* Increased padding for better spacing */
+  text-align: center; /* Center the text */
+  font-size: 24px; /* Larger font size for emphasis */
+  font-weight: bold; /* Bold text for prominence */
+  color: #333; /* Dark text color for contrast */
+  margin-top: 120px; /* Margin for spacing above and below */
+  border-radius: 5px; /* Slightly rounded corners */
+  
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+/* Card Styles */
+.article.card {
+  width: 300px;
+  margin: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+article.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+article.card .card-content {
+  padding: 10px;
+}
+
+/* Main Content Styles */
+.cards-container {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  align-items: start;
+  margin-top: 20px;
+}
+
+.card {
+  width: 360px;
+  min-height: 400px;
+  box-shadow: 0 0 4px #d4ecff;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #fff;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 1px 1px 8px #d4ecff;
+  background-color: #f9fdff;
+  transform: translateY(-2px);
+}
+
+/* Additional Styles */
+p {
+  font-family: "Roboto", sans-serif;
+  color: var(--secondary-text-color);
+  line-height: 1.4rem;
+}
+
+ul {
+  list-style: none;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+/* Footer styles */
+/* Footer styles */
+.footer {
+  background-color: #1f2937; /* Dark background color */
+  color: white;
+  padding: 40px 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-about,
+.footer-links,
+.footer-social,
+.footer-contact {
+  flex: 1 1 200px;
+  margin: 10px;
+}
+
+.footer h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #f9fafb;
+}
+
+.footer p,
+.footer ul li a {
+  color: #d1d5db;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.footer ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin-bottom: 10px;
+}
+
+.footer ul li a:hover {
+  color: #2294ed; /* Accent color */
+  text-decoration: underline;
+}
+
+/* Social Media Icons */
+.social-icons {
+  list-style: none;
+  display: flex;
+  padding: 0;
+}
+
+.social-icons li {
+  margin-right: 15px;
+}
+
+.social-icons li img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons li img:hover {
+  transform: scale(1.1);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid #374151;
+  margin-top: 30px;
+  color: #9ca3af;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+}
+
+/* Responsive styles */
+
+h2 {
+  text-align: center;
+  color: #333;
+  font-size: 2.5rem;
+}
+#userPreferences {
+  text-align: center;
+  margin: 20px 0;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.user-name {
+  font-size: 1.8rem;
+  color: #ff4b2b;
+  margin-bottom: 15px;
+}
+.user-pref {
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 10px;
+}
+.user-pref strong {
+  color: #333;
+}
+.bookmark-button {
+  background-color: #ff4b2b; /* Same color as logout for consistency */
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px; /* Space above the button */
+  transition: background-color 0.3s;
+  font-size: 14px; /* Font size */
+  font-weight: 600; /* Slightly bold */
+  border-radius: 5px;
+}
+.bookmark-btn {
+  background-color: #ff4b2b; /* Green background */
+  border: none;
+  color: white; /* White text */
+  padding: 8px 16px; /* Padding around the text */
+  font-size: 14px; /* Font size */
+  font-weight: 600; /* Slightly bold */
+
+  cursor: pointer; /* Pointer cursor */
+  border-radius: 5px; /* Slightly rounded corners */
+  margin-left: 10px; /* Space from logout or other elements */
+  transition: background-color 0.3s;
+}
+
+/* Hover effect for all bookmark buttons */
+
+/* Focus effect for better accessibility */
+.bookmark-btn:focus {
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); /* Subtle shadow on focus */
+}
+
+/* Pagination Styles */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.pagination button {
+  padding: 10px 15px;
+  margin: 0 5px;
+  border: 1px solid var(--accent-color);
+  border-radius: 5px;
+  background-color: var(--text-light);
+  color: var(--primary-text-color);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.pagination .page-numbers {
+  display: flex;
+}
+
+.pagination .page {
+  background-color: var(--secondary-text-color);
+  color: white;
+}
+
+.pagination .page:hover {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.pagination .prev,
+.pagination .next {
+  font-weight: bold;
+}
+/* Responsive Styles */
+
+/* For mobile devices (small screens) */
+@media (max-width: 480px) {
+  .main-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo-text {
+    font-size: 36px; /* Reduce font size */
+  }
+
+  .search-bar {
+    margin: 10px 0;
+    width: 100%; /* Full-width for mobile */
+  }
+
+  .auth-menu {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .auth-button {
+    width: 100%;
+  }
+
+  /* Breaking News Bar */
+  .breaking-news {
+    font-size: 18px;
+    padding: 10px;
+  }
+
+  /* Cards */
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    min-height: auto;
+    margin-bottom: 20px;
+  }
+
+  /* Footer */
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-about, .footer-links, .footer-social, .footer-contact {
+    margin-bottom: 20px;
+  }
+}
+
+/* For tablets (medium screens) */
+@media (max-width: 768px) {
+  .main-nav {
+    padding: 10px;
+  }
+
+  .logo-text {
+    font-size: 42px;
+  }
+
+  .search-bar {
+    margin: 15px 0;
+  }
+
+  .breaking-news {
+    font-size: 20px;
+  }
+
+  .cards-container {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .card {
+    width: 320px; /* Slightly smaller cards */
+  }
+
+  /* Footer adjustments */
+  .footer-container {
+    flex-wrap: wrap;
+  }
+
+  .footer-about, .footer-links, .footer-social, .footer-contact {
+    margin: 15px;
+  }
+}
+
+/* For desktops (large screens) */
+@media (min-width: 1024px) {
+  .cards-container {
+    justify-content: space-between;
+  }
+
+  .footer-container {
+    justify-content: space-between;
+  }
+}

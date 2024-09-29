@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Echoes Of News</title>
+    <link rel="stylesheet" href="home-page.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="main-nav container flex">
+          <a href="#" class="company-logo">
+            <div class="logo-text">
+              <span class="echo">E</span>
+              <span class="echo">c</span>
+              <span class="echo">h</span>
+              <span class="echo">o</span>
+              <span class="echo">e</span>
+              <span class="echo">s</span>
+              <span class="logo-subtext"> Of News</span>
+            </div>
+          </a>
+
+          <div class="search-bar flex">
+            <input
+              id="search-text"
+              type="text"
+              class="news-input"
+              placeholder="Search news..."
+              aria-label="Search news"
+            />
+          </div>
+
+          <div id="weather-widget" aria-live="polite">
+            <select id="country-select" aria-label="Select country">
+              <option value="India">India</option>
+              <option value="Australia">Australia</option>
+              <option value="USA">USA</option>
+              <option value="Brazil">Brazil</option>
+              <option value="Canada">Canada</option>
+              <option value="Germany">Germany</option>
+              <option value="France">France</option>
+              <option value="Japan">Japan</option>
+              <option value="China">China</option>
+              <option value="Russia">Russia</option>
+              <option value="UK">UK</option>
+              <option value="Italy">Italy</option>
+              <option value="Spain">Spain</option>
+              <option value="South Africa">South Africa</option>
+              <option value="Mexico">Mexico</option>
+              <option value="Argentina">Argentina</option>
+              <option value="Saudi Arabia">Saudi Arabia</option>
+              <option value="South Korea">South Korea</option>
+              <option value="Turkey">Turkey</option>
+              <option value="Egypt">Egypt</option>
+            </select>
+            <img
+              id="weather-icon"
+              src=""
+              alt="Weather Icon"
+              style="display: none"
+            />
+            <span id="weather-info">Loading weather...</span>
+          </div>
+
+          <button id="logout" class="logout-button">Logout</button>
+          <a href="bookmark.html">
+            <button class="bookmark-btn" aria-label="Go to your bookmarks">
+              Bookmark
+            </button>
+          </a>
+        </div>
+
+        <div class="secondary-nav">
+          <ul class="flex">
+            <li
+              class="hover-link nav-item"
+              id="home"
+              onclick="onNavItemClick('home')"
+            >
+              Home
+            </li>
+            <li
+              class="hover-link nav-item"
+              id="world"
+              onclick="onNavItemClick('world')"
+            >
+              World
+            </li>
+            <li
+              class="hover-link nav-item"
+              id="politics"
+              onclick="onNavItemClick('politics')"
+            >
+              Politics
+            </li>
+            <li
+              class="hover-link nav-item"
+              id="business"
+              onclick="onNavItemClick('business')"
+            >
+              Business
+            </li>
+            <li
+              class="hover-link nav-item"
+              id="technology"
+              onclick="onNavItemClick('technology')"
+            >
+              Technology
+            </li>
+            <li
+              class="hover-link nav-item"
+              id="sports"
+              onclick="onNavItemClick('sports')"
+            >
+              Sports
+            </li>
+            <li
+              class="hover-link nav-item"
+              id="entertainment"
+              onclick="onNavItemClick('entertainment')"
+            >
+              Entertainment
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="breaking-news">
+        <marquee id="breaking-news-marquee">Loading breaking news...</marquee>
+      </div>
+    </header>
+    <h2 id="welcome-message">Welcome to Your News Dashboard!</h2>
+    <div id="userPreferences"></div>
+    <section class="news-container" id="news-container"></section>
+
+    <section
+      class="cards-container container flex"
+      id="cards-container"
+    ></section>
+
+    <div class="pagination" id="pagination">
+      <button class="prev" id="prev-btn">« Prev</button>
+      <span class="page-numbers" id="page-numbers"></span>
+      <button class="next" id="next-btn">Next »</button>
+    </div>
+
+    <template id="template-news-card">
+      <article class="card">
+        <header class="card-header">
+          <img
+            src="https://via.placeholder.com/400x200"
+            alt="News Image"
+            id="news-img"
+          />
+        </header>
+        <div class="card-content">
+          <h3 id="news-title">This is the Title</h3>
+          <h6 class="news-source" id="news-source">Source Name · Date</h6>
+          <p class="news-desc" id="news-desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </p>
+          <button class="bookmark-button" onclick="bookmarkArticle(this)">
+            Bookmark
+          </button>
+        </div>
+      </article>
+    </template>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-about">
+          <h3>About Us</h3>
+          <p>
+            Stay updated with the latest news from around the world. We bring
+            you breaking news, entertainment, business insights, and more.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="homepage.html">World</a></li>
+            <li><a href="homepage.html">Business</a></li>
+            <li><a href="homepage.html">Technology</a></li>
+            <li><a href="homepage.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-social">
+          <h3>Follow Us</h3>
+          <ul class="social-icons">
+            <li>
+              <a href="https://github.com/Bhavana2567" target="_blank"
+                ><img src="social img/github.png" alt="GitHub"
+              /></a>
+            </li>
+            <li>
+              <a href="https://thetechwriter526.hashnode.dev/" target="_blank"
+                ><img src="social img/blog.png" alt="Hashnode"
+              /></a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/ajanya-mj-a8a0622b1/"
+                target="_blank"
+                ><img src="social img/linkedin.png" alt="LinkedIn"
+              /></a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <p>Email: info@newswebsite.com</p>
+          <p>Phone: +1 (123) 456-7890</p>
+          <p>Address: 123 News Street, New Delhi, India</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 Echoes Of News. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="home-page.js"></script>
+  </body>
+</html>

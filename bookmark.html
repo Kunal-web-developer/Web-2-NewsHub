@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Bookmarks - Echoes Of News</title>
+    <link rel="stylesheet" href="bookmark.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="main-nav container flex">
+          <a href="homepage.html" class="company-logo">
+            <div class="logo-text">
+              <span class="echo">E</span>
+              <span class="echo">c</span>
+              <span class="echo">h</span>
+              <span class="echo">o</span>
+              <span class="echo">e</span>
+              <span class="echo">s</span>
+              <span class="logo-subtext"> Of News</span>
+            </div>
+          </a>
+          <div class="clearfix">
+            <a href="homepage.html">
+              <button class="homepage-btn">Home</button>
+            </a>
+            <a href="login.html">
+              <button id="logout">Logout</button>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <h2>Your Bookmarked Articles</h2>
+      <section id="bookmarks-container" class="cards-container container flex">
+        <!-- Bookmarked articles will be inserted here dynamically -->
+      </section>
+
+      <!-- Template for a single bookmarked article -->
+      <template id="template-bookmark-card">
+        <div class="bookmark-card">
+          <img class="bookmark-img" src="" alt="Bookmark Image" />
+          <h3 class="bookmark-title"></h3>
+          <p class="bookmark-source"></p>
+          <p class="bookmark-desc"></p>
+          <button class="remove-bookmark-button">Remove</button>
+        </div>
+      </template>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-about">
+          <h3>About Us</h3>
+          <p>
+            Stay updated with the latest news from around the world. We bring
+            you breaking news, entertainment, business insights, and more.
+          </p>
+        </div>
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="homepage.html">World</a></li>
+            <li><a href="homepage.html">Business</a></li>
+            <li><a href="homepage.html">Technology</a></li>
+            <li><a href="homepage.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h3>Follow Us</h3>
+          <ul class="social-icons">
+            <li>
+              <a href="https://github.com/Kunal-web-developer" target="_blank"
+                ><img src="social img/github.png" alt="GitHub"
+              /></a>
+            </li>
+            <li>
+              <a href="https://thetechwriter526.hashnode.dev/" target="_blank"
+                ><img src="social img/blog.png" alt="Hashnode"
+              /></a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/kunal-web-developer"
+                target="_blank"
+                ><img src="social img/linkedin.png" alt="LinkedIn"
+              /></a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <p>Email: info@newswebsite.com</p>
+          <p>Phone: +1 (123) 456-7890</p>
+          <p>Address: 123 News Street, New Delhi, India</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Echoes Of News. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="bookmark.js"></script>
+  </body>
+</html>

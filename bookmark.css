@@ -1,0 +1,367 @@
+/* Global Styles */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f6f5f7;
+  color: var(--primary-text-color);
+  margin: 0;
+  padding: 20px;
+}
+
+:root {
+  --primary-text-color: #183b56;
+  --secondary-text-color: #577592;
+  --accent-color: #2294ed;
+  --accent-color-dark: #1d69a3;
+}
+
+/* Navbar Styles */
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.company-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+/* Reduced Logo Size */
+.logo-text {
+  font-size: 36px; /* Adjusted size for smaller logo */
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0px;
+}
+
+.logo-text .echo {
+  color: #4285F4;
+}
+
+.logo-text .echo:nth-child(2) {
+  color: #EA4335;
+}
+
+.logo-text .echo:nth-child(3) {
+  color: #FBBC05;
+}
+
+.logo-text .echo:nth-child(4) {
+  color: #4285F4;
+}
+
+.logo-text .echo:nth-child(5) {
+  color: #34A853;
+}
+
+.logo-text .echo:nth-child(6) {
+  color: #EA4335;
+}
+
+.logo-subtext {
+  font-size: 18px; /* Adjusted size for "Of News" */
+  color: #000;
+  font-family: 'Montserrat', sans-serif;
+  margin-left: 10px;
+}
+
+.company-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Button Styles */
+/* Logout Button */
+#logout {
+  background-color: #ff4b2b;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  float: right; /* Aligns the button to the right */
+  margin-left: 10px; /* Adds space between the buttons */
+}
+
+#logout:hover {
+  background-color: #ff1f0b;
+}
+
+/* Homepage Button */
+.homepage-btn {
+  background-color: #ff4b2b;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  float: right; /* Aligns the button to the right */
+  margin-left: 10px; /* Adds space between the buttons */
+}
+
+.homepage-btn:hover {
+  background-color: #ff1f0b;
+}
+
+/* Clearfix for parent container */
+.clearfix::after {
+  content: "";
+  clear: both; /* Clears floated elements */
+  display: table; /* Ensures proper layout */
+}
+/* Remove Bookmark Button */
+.remove-bookmark-button {
+  background-color: #ff4b2b; /* Consistent with other buttons */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px; /* Space above the button */
+}
+
+.remove-bookmark-button:hover {
+  background-color: #ff1f0b; /* Hover effect */
+}
+h2 {
+  color: var(--primary-text-color); /* Primary text color */
+  font-size: 28px; /* Adjust the size as needed */
+  margin-bottom: 20px; /* Space below the heading */
+  text-align: center; /* Center align the text */
+  font-weight: bold; /* Make the text bold */
+}
+
+/* Layout Improvements */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+/* Card Styles */
+.cards-container {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  align-items: start;
+  margin-top: 20px;
+}
+
+.card {
+  width: 360px;
+  min-height: 400px;
+  box-shadow: 0 0 4px #d4ecff;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #fff;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 1px 1px 8px #d4ecff;
+  background-color: #f9fdff;
+  transform: translateY(-2px);
+}
+
+article.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+article.card .card-content {
+  padding: 10px;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  color: var(--secondary-text-color);
+  line-height: 1.4rem;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #1f2937;
+  color: white;
+  padding: 40px 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-about,
+.footer-links,
+.footer-social,
+.footer-contact {
+  flex: 1 1 200px;
+  margin: 10px;
+}
+
+.footer h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #f9fafb;
+}
+
+.footer p,
+.footer ul li a {
+  color: #d1d5db;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.footer ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin-bottom: 10px;
+}
+
+.footer ul li a:hover {
+  color: #2294ed;
+  text-decoration: underline;
+}
+
+.social-icons {
+  list-style: none;
+  display: flex;
+  padding: 0;
+}
+
+.social-icons li {
+  margin-right: 15px;
+}
+
+.social-icons li img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons li img:hover {
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid #374151;
+  margin-top: 30px;
+  color: #9ca3af;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+}
+
+#userPreferences {
+  margin-top: 20px;
+  text-align: center;
+}
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.bookmark-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  width: calc(33.333% - 2rem); /* Three cards per row */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.bookmark-img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.remove-bookmark-button {
+  background-color: #f44336; /* Red color for remove */
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.remove-bookmark-button:hover {
+  background-color: #d32f2f; /* Darker red on hover */
+}
+/* Responsive Styles */
+
+/* For medium devices (tablets and smaller desktops) */
+@media only screen and (max-width: 1024px) {
+  .cards-container {
+    flex-wrap: wrap; /* Ensure cards wrap in smaller screens */
+    justify-content: center; /* Center the cards */
+  }
+
+  .card {
+    width: 80%; /* Cards take 80% width on medium screens */
+    max-width: 618px; /* Max width set to 618px */
+    min-height: 200px; /* Maintain a minimum height */
+    margin-bottom: 15px; /* Spacing between cards */
+  }
+
+  .card img {
+    height: 150px; /* Adjust image height for better fit */
+    object-fit: cover; /* Maintain image aspect ratio */
+  }
+
+  .card .card-content {
+    padding: 10px; /* Standard padding */
+  }
+}
+
+/* For small devices (phones) */
+@media only screen and (max-width: 600px) {
+  .cards-container {
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center; /* Center the cards */
+  }
+
+  .card {
+    width: 100%; /* Cards take 90% width on small screens */
+    max-width: 300px; /* Max width set to 412px to prevent overflow */
+    min-height: 50px; /* Maintain a minimum height */
+    margin-bottom: 5px; /* Spacing between cards */
+  }
+
+  .card img {
+    height: 30px; /* Reduce image height for smaller screens */
+    object-fit: cover; /* Maintain image aspect ratio */
+  }
+
+  .card .card-content {
+    padding: 5px; /* Reduce padding for smaller screens */
+  }
+}

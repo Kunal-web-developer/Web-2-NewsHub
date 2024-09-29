@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Preferences</title>
+    <style>
+       body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f6f5f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 400px;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    text-align: center;
+}
+
+/* Label and Select Styling */
+label, select {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px; /* Added padding for better spacing */
+    font-size: 16px; /* Adjusted font size */
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-sizing: border-box; /* Ensures padding is included in the element's width */
+}
+
+button {
+    background-color: #ff4b2b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #ff1f0b;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Adjust container width for smaller screens */
+        padding: 30px;
+    }
+
+    label, select {
+        font-size: 15px; /* Adjust label and select font size for medium screens */
+        padding: 10px;
+    }
+
+    button {
+        padding: 12px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%; /* Nearly full width on mobile devices */
+        padding: 20px;
+    }
+
+    label, select {
+        font-size: 14px; /* Smaller font size for labels and selects on mobile */
+        padding: 8px; /* Adjust padding for smaller devices */
+    }
+
+    button {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Select Your Preferences</h2>
+        <form id="preferencesForm">
+            <label for="topics">Choose your favorite news topics:</label>
+            <select id="topics" multiple>
+                <option value="Technology">Technology</option>
+                <option value="Sports">Sports</option>
+                <option value="Business">Business</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Health">Health</option>
+            </select>
+
+            <label for="sources">Choose your favorite news sources:</label>
+            <select id="sources" multiple>
+                <option value="BBC">BBC News</option>
+                <option value="CNN">CNN</option>
+                <option value="Reuters">Reuters</option>
+                <option value="The New York Times">The New York Times</option>
+                <option value="The Guardian">The Guardian</option>
+                <option value="Al Jazeera">Al Jazeera</option>
+                <option value="Bloomberg">Bloomberg</option>
+                <option value="NPR">NPR</option>
+                <option value="Forbes">Forbes</option>
+                <option value="HuffPost">HuffPost</option>
+            </select>
+            
+            <button type="submit">Save Preferences</button>
+        </form>
+    </div>
+
+    <script>
+        const API_KEY = 'your-news-api-key'; // Replace with your API key
+        const sourcesSelect = document.getElementById('sources');
+
+        async function fetchSources() {
+            try {
+                const response = await fetch(`https://newsapi.org/v2/sources?apiKey=${API_KEY}`);
+                const data = await response.json();
+                
+                data.sources.forEach(source => {
+                    const option = document.createElement('option');
+                    option.value = source.id;
+                    option.textContent = source.name;
+                    sourcesSelect.appendChild(option);
+                });
+            } catch (error) {
+                console.error('Error fetching sources:', error);
+            }
+        }
+
+        window.onload = () => {
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+            if (!currentUser) {
+                alert('You are not logged in!');
+                window.location.href = 'login.html';
+            }
+            fetchSources();
+        };
+
+        document.getElementById('preferencesForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const selectedTopics = Array.from(document.getElementById('topics').selectedOptions).map(option => option.value);
+            const selectedSources = Array.from(document.getElementById('sources').selectedOptions).map(option => option.value);
+            
+            const userPreferences = {
+                topics: selectedTopics,
+                sources: selectedSources
+            };
+            localStorage.setItem('userPreferences', JSON.stringify(userPreferences));
+            alert('Preferences saved!');
+            window.location.href = 'homepage.html';
+        });
+    </script>
+</body>
+</html>
