@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echoes of News | Stay Informed</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0; 
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            background-color: #f4f4f9;
+            line-height: 1.6;
+        }
+
+        /* Header */
+       /* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    transition: padding 0.3s ease;
+}
+
+.company-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: bold;
+    transition: font-size 0.3s ease;
+}
+
+.logo-text {
+    font-size: 28px;
+    font-family: 'Montserrat', sans-serif;
+    transition: font-size 0.3s ease;
+}
+
+.echo:nth-child(1) { color: #4285F4; } /* Blue */
+.echo:nth-child(2) { color: #EA4335; } /* Red */
+.echo:nth-child(3) { color: #FBBC05; } /* Yellow */
+.echo:nth-child(4) { color: #4285F4; } /* Blue */
+.echo:nth-child(5) { color: #34A853; } /* Green */
+.echo:nth-child(6) { color: #EA4335; } /* Red */
+
+.logo-subtext {
+    font-size: 16px;
+    color: #555;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 10px;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #333;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #4285F4;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(to right, #2c3e50, #4ca1af);
+    color: #fff;
+    padding: 0 20px;
+    position: relative;
+    top: 60px; /* Offset for fixed header */
+}
+
+.hero-text {
+    max-width: 700px;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    transition: font-size 0.3s ease;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Button Styles */
+.discover-news-btn {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.discover-news-btn:hover {
+    background-color: #fff;
+    color: #2c3e50;
+}
+
+.signup-btn {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #fff;
+    color: #2c3e50;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.signup-btn:hover {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+/* Responsive Design */
+
+/* Large Screens */
+@media (min-width: 1200px) {
+    .logo-text {
+        font-size: 32px;
+    }
+
+    .hero h1 {
+        font-size: 56px;
+    }
+
+    .hero p {
+        font-size: 22px;
+    }
+}
+
+/* Medium Screens (Tablets) */
+@media (max-width: 992px) {
+    header {
+        padding: 15px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+    
+    .nav a {
+        font-size: 16px;
+    }
+
+    .discover-news-btn, .signup-btn {
+        padding: 12px 25px;
+    }
+}
+
+/* Small Screens (Mobile) */
+@media (max-width: 768px) {
+    .company-logo {
+        font-size: 20px;
+    }
+
+    .hero {
+        height: 90vh;
+        padding: 0 15px;
+        top: 70px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .discover-news-btn, .signup-btn {
+        width: 100%;
+        padding: 12px;
+        text-align: center;
+    }
+
+    nav {
+        display: none; /* Can be replaced by a burger menu for mobile */
+    }
+}
+
+/* Extra Small Screens */
+@media (max-width: 576px) {
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+}
+
+        /* Features Section */
+        .features {
+    padding: 80px 50px;
+    text-align: center;
+    background-color: #eafaf1;
+}
+
+.features h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #2b7a78;
+}
+
+.features-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.feature-card img {
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 24px;
+    color: #17252a;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.feature-card .btn {
+    background-color: #3aafa9;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.feature-card .btn:hover {
+    background-color: #2b7a78;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+@media (max-width: 768px) {
+    .features-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-card {
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+        /* Footer */
+        .footer {
+  background-color: #1f2937; /* Dark background color */
+  color: white;
+  padding: 40px 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-about,
+.footer-links,
+.footer-social,
+.footer-contact {
+  flex: 1 1 200px;
+  margin: 10px;
+}
+
+.footer h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #f9fafb;
+}
+
+.footer p,
+.footer ul li a {
+  color: #d1d5db;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.footer ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin-bottom: 10px;
+}
+
+.footer ul li a:hover {
+  color: #2294ed; /* Accent color */
+  text-decoration: underline;
+}
+
+/* Social Media Icons */
+.social-icons {
+  list-style: none;
+  display: flex;
+  padding: 0;
+}
+
+.social-icons li {
+  margin-right: 15px;
+}
+
+.social-icons li img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons li img:hover {
+  transform: scale(1.1);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid #374151;
+  margin-top: 30px;
+  color: #9ca3af;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+}
+
+        @media only screen and (max-width: 768px) {
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .hero .cta-btn, .hero .secondary-btn {
+                font-size: 18px;
+                padding: 12px 25px;
+            }
+
+            .feature {
+                flex-direction: column;
+            }
+
+            .feature div {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <a href="#" class="company-logo" aria-label="Echoes of News Logo" title="Echoes of News - Your source for the latest news">
+            <div class="logo-text">
+                <span class="echo">E</span>
+                <span class="echo">c</span>
+                <span class="echo">h</span>
+                <span class="echo">o</span>
+                <span class="echo">e</span>
+                <span class="echo">s</span>
+                <span class="logo-subtext">Of News</span>
+            </div>
+        </a>
+
+        <nav>
+            <a href="#features">Features</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Stay Informed with Echoes of News</h1>
+            <p>Your reliable source for top headlines, weather updates, and personalized news. Tailor your news feed to your preferences and bookmark your favorite stories.</p>
+            <div class="hero-buttons">
+                <!-- Simplified new buttons -->
+                <a href="#" class="discover-news-btn">Discover Personalized News</a>
+                <a href="sinup.html" class="signup-btn">Join Echoes of News</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="features" id="features">
+      <h2>Our Features & Services</h2>
+      <div class="features-grid">
+          <div class="feature-card">
+              <img src="social img/Happy woman chatting with friends online.jpg" alt="Communication Icon">
+              <h3>Top Headlines</h3>
+              <p>Get real-time access to breaking news and the latest headlines from around the world.</p>
+              <a href="#" class="btn">More</a>
+          </div>
+          <div class="feature-card">
+              <img src="social img/wether img.jpg" alt="Weather Icon">
+              <h3>Weather Reports</h3>
+              <p>Stay updated with accurate weather forecasts and live reports for your location.</p>
+              <a href="#" class="btn">More</a>
+          </div>
+          <div class="feature-card">
+              <img src="social img/news.jpg" alt="Personalized News Icon">
+              <h3>Personalized News</h3>
+              <p>Choose the categories you care about: business, sports, politics, and more. Set preferences for a tailored news experience.</p>
+              <a href="#" class="btn">More</a>
+          </div>
+      </div>
+  </section>
+  
+  
+
+    <!-- Footer -->
+    <section id="contact">
+            <footer class="footer">
+                <div class="footer-container">
+                  <div class="footer-about">
+                    <h3>About Us</h3>
+                    <p>
+                      Stay updated with the latest news from around the world. We bring
+                      you breaking news, entertainment, business insights, and more.
+                    </p>
+                  </div>
+          
+                  <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                      <li><a href="homepage.html">Home</a></li>
+                      <li><a href="homepage.html">World</a></li>
+                      <li><a href="homepage.html">Business</a></li>
+                      <li><a href="homepage.html">Technology</a></li>
+                      <li><a href="homepage.html">Contact Us</a></li>
+                    </ul>
+                  </div>
+          
+                  <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <ul class="social-icons">
+                      <li>
+                        <a href="https://github.com/Kunal-web-developer" target="_blank"
+                          ><img src="social img/github.png" alt="GitHub"
+                        /></a>
+                      </li>
+                      <li>
+                        <a href="https://thetechwriter526.hashnode.dev/" target="_blank"
+                          ><img src="social img/blog.png" alt="Hashnode"
+                        /></a>
+                      </li>
+                      <li>
+                        <a
+                          href="https://www.linkedin.com/in/kunal-web-developer"
+                          target="_blank"
+                          ><img src="social img/linkedin.png" alt="LinkedIn"
+                        /></a>
+                      </li>
+                    </ul>
+                  </div>
+          
+                  <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p>Email: info@newswebsite.com</p>
+                    <p>Phone: +1 (123) 456-7890</p>
+                    <p>Address: 123 News Street, New Delhi, India</p>
+                  </div>
+                </div>
+          
+                <div class="footer-bottom">
+                  <p>&copy; 2024 Echoes Of News. All Rights Reserved.</p>
+                </div>
+              
+        </footer>
+    </section>
+</body>
+</html>
